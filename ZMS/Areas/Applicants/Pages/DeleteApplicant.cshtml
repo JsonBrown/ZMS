@@ -1,0 +1,11 @@
+﻿@page "{applicantId:int}"
+@model ZMS.Areas.Applicants.Pages.DeleteApplicantModel
+@{
+    ViewData["Title"] = "Delete an Applicant";
+}
+<h2>Delete!</h2>
+<div class="alert alert-danger">Are you sure you want to delete @Model.Applicant.Name?</div>
+<form method="post">
+    <button type="submit" class="btn btn-danger">Yes!</button>
+    <a asp-page="AllApplicants" class="btn btn-default">Cancel</a>
+</form>

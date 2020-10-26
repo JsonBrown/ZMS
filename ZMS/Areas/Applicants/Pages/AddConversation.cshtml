@@ -1,0 +1,34 @@
+﻿@page "{applicantId:int}"
+@model ZMS.Areas.Applicants.Pages.AddConversationModel
+@{
+    ViewData["Title"] = "Add a Conversation";
+}
+
+<h1>Adding a Conversation with @Model.Applicant.Name</h1>
+<form method="post">
+    <input type="hidden" asp-for="Conversation.Id" />
+    <input type="hidden" asp-for="Conversation.Applicant" />
+    <input type="hidden" asp-for="Conversation.ApplicantId" />
+    <div class="form-group">
+        <label asp-for="Conversation.Date"><b>Date</b></label>
+        <input asp-for="Conversation.Date" class="form-control" value="" type="text" />
+        <span class="text-danger" asp-validation-for="Conversation.Date"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Conversation.Summary"><b>Summary</b></label>
+        <input asp-for="@Model.Conversation.Summary" class="form-control" />
+        <span class="text-danger" asp-validation-for="@Model.Conversation.Summary"></span>
+    </div>
+    <div class="form-check">
+        <input asp-for="Conversation.Interview" type="checkbox" class="form-check-input" />
+        <label asp-for="@Model.Conversation.Interview"><b>Check here if this was the initial interview</b></label>
+    </div>
+    <hr />
+    <div>
+        <a style="float: left;" class="btn btn-outline-secondary" asp-area="Applicants" asp-page="/ApplicantDetails" asp-route-applicantId="@Model.Applicant.Id" >Back</a>
+        <button style="float: right;" type="submit" class="btn btn-primary" asp-route-applicantId="@Model.Applicant.Id">Save</button>
+    </div>
+
+    <br />
+    </form>
+

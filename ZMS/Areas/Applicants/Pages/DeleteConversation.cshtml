@@ -1,0 +1,14 @@
+﻿@page "{conversationId:int}"
+@model ZMS.Areas.Applicants.Pages.DeleteConversationModel
+@{
+    ViewData["Title"] = "Delete a Conversation";
+}
+<h2>Delete!</h2>
+<div class="alert alert-danger">Are you sure you want to delete this conversation with @Model.Applicant.Name?</div>
+<quote><em>@Model.Conversation.Summary</em></quote>
+<br />
+<hr />
+<form method="post">
+    <button type="submit" class="btn btn-danger">Yes!</button>
+    <a asp-page="ApplicantDetails" asp-route-applicantId="@Model.Applicant.Id" class="btn btn-default">Cancel</a>
+</form>

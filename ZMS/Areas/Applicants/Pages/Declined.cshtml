@@ -1,0 +1,51 @@
+﻿@page
+@model ZMS.Pages.Applicants.DeclinedModel
+@{ }
+<div class="header">
+    <h1>
+        Applicant Tracker
+        <a id="addapplicant-btn" asp-area="Applicants" asp-page=".\EditApplicant" class="btn btn-primary">Add New</a>
+    </h1>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Applicants" asp-page="AllApplicants">All Applicants</a></li>
+        <li class="breadcrumb-item"><a asp-area="Applicants" asp-page="/Pending">Pending</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Declined</li>
+        <li class="breadcrumb-item"><a asp-area="Applicants" asp-page="/Returning">Returning</a></li>
+    </ol>
+</nav>
+<div class="table-responsive">
+    <table class="table table-sm table-hover table-striped table-bordered">
+        <caption>List of applicants that either declined or were declined for the job.</caption>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var applicant in Model.Applicants)
+                if (applicant.Hired == false)
+                {
+<tr>
+    <td><a asp-area="Applicants" asp-page="/ApplicantDetails" asp-route-applicantId="@applicant.Id">@applicant.Name</a></td>
+    <td><a href="mailto:@applicant.Email" target="_top">@applicant.Email</a></td>
+    <td>@applicant.PhoneNumber</td>
+    <td>
+        <a class="btn btn-sm" asp-area="Applicants" asp-page="/ApplicantDetails"
+           asp-route-applicantId="@applicant.Id">
+            <i class="fas fa-search-plus"></i>
+        </a>
+        <a class="btn btn-sm" asp-area="Applicants" asp-page="/EditApplicant"
+           asp-route-applicantId="@applicant.Id">
+            <i class="fas fa-edit"></i>
+        </a>
+        <a class="btn btn-sm" asp-area="Applicants" asp-page="/DeleteApplicant" asp-route-applicantId="@applicant.Id"><i class="fas fa-trash"></i></a>
+    </td>
+</tr>                }
+        </tbody>
+    </table>
+</div>

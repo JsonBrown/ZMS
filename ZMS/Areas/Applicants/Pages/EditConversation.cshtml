@@ -1,0 +1,39 @@
+﻿@page "{conversationId:int}"
+@model ZMS.Areas.Applicants.Pages.EditConversationModel
+@{
+    ViewData["Title"] = "Edit Conversation";
+}
+
+<h1>Editing Conversation with @Model.Applicant.Name</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Conversation.Id" />
+    <input type="hidden" asp-for="Conversation.ApplicantId" />
+    <input type="hidden" asp-for="Conversation.Applicant" />
+    <div class="form-group">
+        <label asp-for="Conversation.Date"><b>Date</b></label>
+        <input asp-for="Conversation.Date" class="form-control" value="@Model.Conversation.Date.ToShortDateString()" type="text"/>
+        <span class="text-danger" asp-validation-for="Conversation.Date"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Conversation.Summary"><b>Summary</b></label>
+        <input asp-for="Conversation.Summary" class="form-control" />
+        <span class="text-danger" asp-validation-for="Conversation.Summary"></span>
+    </div>
+    <div class="form-check">
+        <input asp-for="Conversation.Interview" type="checkbox" class="form-check-input" />
+        <label asp-for="Conversation.Interview"><b>Check here if this was the initial interview</b></label>
+    </div>
+    <hr />
+    <div>
+        <a style="float: left;" class="btn btn-outline-secondary" onclick="goBack()">Go Back</a>
+        <button style="float: right;" type="submit" class="btn btn-primary">Save</button>
+    </div>
+
+    <br />
+</form>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>

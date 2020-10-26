@@ -1,0 +1,99 @@
+﻿@page "{applicantId:int}"
+@model ZMS.ApplicantDetailsModel
+@{
+    ViewData["Title"] = "ApplicantDetails";
+}
+
+
+<div id="CenterIt">
+    <h1>
+        @Model.Applicant.Name
+        <a style="float:right; padding: 25px" class="btn btn-sm" asp-area="Applicants" asp-page="/DeleteApplicant" asp-route-applicantId="@Model.Applicant.Id"><i class="fas fa-trash"></i></a>
+        <a style="float:right; padding: 25px" class="btn btn-sm" asp-area="Applicants" asp-page="/EditApplicant" asp-route-applicantId="@Model.Applicant.Id"><i class="fas fa-edit"></i></a>
+    </h1>
+</div>
+@if (Model.ConversationMessage != null)
+{
+    <div style="text-align: center" class="alert alert-success">@Model.ConversationMessage</div>
+}
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Name</th>
+        <td>@Model.Applicant.Name</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td><a href="mailto:@Model.Applicant.Email" target="_top">@Model.Applicant.Email</a></td>
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <td>@Model.Applicant.PhoneNumber</td>
+    </tr>
+    <tr>
+        <th>Application Date</th>
+        <td>@Model.Applicant.AppDate.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <th>Job Offer</th>
+        @if (Model.Applicant.Hired == true)
+        {
+            <td>Yes</td>
+}
+        else
+        {
+            <td>No</td>
+}
+    </tr>
+    <tr>
+        <th>Preffered Training Date</th>
+        <td>@Model.Applicant.Training</td>
+    </tr>
+    <tr>
+        <th>Source of Refferal</th>
+        <td>@Model.Applicant.JobSource</td>
+    </tr>
+    <tr>
+        <th>Availability Notes</th>
+        <td>@Model.Applicant.Availability</td>
+    </tr>
+    <tr>
+        <th>Notes</th>
+        <td>@Model.Applicant.Notes</td>
+    </tr>
+</table>
+<hr />
+<h3 id="CenterIt">Conversation History</h3>
+<div class="table-responsive">
+    <table class="table table-hover table-striped">
+        <tbody>
+            @foreach (var conversation in Model.Conversations)
+            {
+                <tr>
+                    @if (conversation.Interview == true)
+                    {
+                        <td><b>Initial Interview</b></td>
+}
+                    else
+                    {
+                        <td><b>Follow Up</b></td>
+}
+                    <td>@conversation.Date.ToShortDateString()</td>
+                    <td>@conversation.Summary</td>
+                    <td>
+                        <a class="btn btn-sm" asp-area="Applicants" asp-page="/EditConversation"
+                           asp-route-conversationId="@conversation.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="btn btn-sm" asp-area="Applicants" asp-page="/DeleteConversation" asp-route-conversationId="@conversation.Id"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+       }
+        </tbody>
+    </table>
+</div>
+<div>
+    
+    <a style="float: left;" class="btn btn-outline-secondary" asp-area="Applicants" asp-page="/AllApplicants">Go Back</a>
+    <a style="float: right;" asp-area="Applicants" asp-page="/AddConversation" asp-route-applicantId="@Model.Applicant.Id " class="btn btn-primary">Add a New Conversation</a>
+</div>
+
