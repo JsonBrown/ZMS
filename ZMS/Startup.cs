@@ -28,6 +28,7 @@ namespace ZMS
             //services.AddSingleton<IApplicantData, InMemoryApplicantData>();
 
             //enable below for sql server
+            services.AddScoped<IApplicantData, SqlApplicantData>();
             services.AddDbContextPool<ApplicantDbContext>(options => { options.UseSqlServer(Configuration.GetConnectionString("ZMSDb")); });
 
             services.AddRazorPages();

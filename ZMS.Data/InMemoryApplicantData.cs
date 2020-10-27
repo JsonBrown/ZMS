@@ -79,7 +79,7 @@ namespace ZMS.Data
         public IEnumerable<Applicant> GetAll()
         {
             return from a in applicants
-                   orderby a.Name
+                   orderby a.AppDate
                    select a;
         }
         public Applicant GetById(int id)
