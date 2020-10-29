@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZMS.Data;
 
 namespace ZMS.Data.Migrations
 {
     [DbContext(typeof(ApplicantDbContext))]
-    partial class ApplicantDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201029225750_Data_Annotations_added")]
+    partial class Data_Annotations_added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

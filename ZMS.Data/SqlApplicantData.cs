@@ -79,6 +79,7 @@ namespace ZMS.Data
         public IEnumerable<Conversation> GetConversations(int id)
         {
             var query = from c in db.Conversations
+                        where c.Applicant.Id == id
                        orderby c.Interview descending
                        select c;
             return query;
