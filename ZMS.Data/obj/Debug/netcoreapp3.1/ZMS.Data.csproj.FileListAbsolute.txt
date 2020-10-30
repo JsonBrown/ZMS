@@ -24,3 +24,7 @@ G:\OneDrive\Projects\Git\ZMS\ZMS.Data\obj\Debug\netcoreapp3.1\ZMS.Data.csproj.Co
 G:\OneDrive\Projects\Git\ZMS\ZMS.Data\obj\Debug\netcoreapp3.1\ZMS.Data.dll
 G:\OneDrive\Projects\Git\ZMS\ZMS.Data\obj\Debug\netcoreapp3.1\ZMS.Data.pdb
 G:\OneDrive\Projects\Git\ZMS\ZMS.Data\obj\Debug\netcoreapp3.1\ZMS.Data.genruntimeconfig.cache
+G:\OneDrive\Projects\ZMS\ZMS.Data\bin\Debug\netcoreapp3.1\ZMS.Data.runtimeconfig.json
+G:\OneDrive\Projects\ZMS\ZMS.Data\bin\Debug\netcoreapp3.1\ZMS.Data.runtimeconfig.dev.json
+G:\OneDrive\Projects\ZMS\ZMS.Data\obj\Debug\netcoreapp3.1\ZMS.Data.csproj.CoreCompileInputs.cache
+G:\OneDrive\Projects\ZMS\ZMS.Data\obj\Debug\netcoreapp3.1\ZMS.Data.genruntimeconfig.cache

@@ -3,8 +3,6 @@
 @{
     ViewData["Title"] = "ApplicantDetails";
 }
-
-
 <div id="CenterIt">
     <h1>
         @Model.Applicant.Name
@@ -62,6 +60,8 @@
     </tr>
 </table>
 <hr />
+@if (Model.Conversations.Any() == true)
+{
 <h3 id="CenterIt">Conversation History</h3>
 <div class="table-responsive">
     <table class="table table-hover table-striped">
@@ -72,11 +72,11 @@
                     @if (conversation.Interview == true)
                     {
                         <td><b>Initial Interview</b></td>
-}
+                    }
                     else
                     {
                         <td><b>Follow Up</b></td>
-}
+                    }
                     <td>@conversation.Date.ToShortDateString()</td>
                     <td>@conversation.Summary</td>
                     <td>
@@ -87,12 +87,12 @@
                         <a class="btn btn-sm" asp-area="Applicants" asp-page="/DeleteConversation" asp-route-conversationId="@conversation.Id"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
-       }
+            }
         </tbody>
     </table>
 </div>
+}
 <div>
-    
     <a style="float: left;" class="btn btn-outline-secondary" asp-area="Applicants" asp-page="/AllApplicants">Go Back</a>
     <a style="float: right;" asp-area="Applicants" asp-page="/AddConversation" asp-route-applicantId="@Model.Applicant.Id " class="btn btn-primary">Add a New Conversation</a>
 </div>

@@ -24,12 +24,25 @@ namespace ZMS
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {   // enable below for in memory testing, plug in the data service file
+        {
+            // enable below for in memory testing
+
+            // Applicant
             //services.AddSingleton<IApplicantData, InMemoryApplicantData>();
 
+            // Equipment
+            //services.AddSingleton<IGearData, InMemoryGearData>();
+
+
             //enable below for sql server
-            services.AddScoped<IApplicantData, SqlApplicantData>();
-            services.AddDbContextPool<ApplicantDbContext>(options => { options.UseSqlServer(Configuration.GetConnectionString("ZMSDb")); });
+
+            //Equipment
+            /*services.AddScoped<IGearData, SqlGearData>();
+            services.AddDbContextPool<EquipmentDbContext>(options => { options.UseSqlServer(Configuration.GetConnectionString("ZMSDb")); });*/
+
+            // Applicant
+            /*services.AddScoped<IApplicantData, SqlApplicantData>();
+            services.AddDbContextPool<ApplicantDbContext>(options => { options.UseSqlServer(Configuration.GetConnectionString("ZMSDb")); });*/
 
             services.AddRazorPages();
         }

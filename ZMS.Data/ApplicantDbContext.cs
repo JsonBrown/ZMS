@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ZMS.Domain;
+using ZMS.Domain.Applicants;
 
 namespace ZMS.Data
 {

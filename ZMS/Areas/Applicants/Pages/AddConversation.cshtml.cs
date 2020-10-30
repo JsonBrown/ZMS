@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ZMS.Data;
-using ZMS.Domain;
+using ZMS.Data.Applicants;
+using ZMS.Domain.Applicants;
 
 namespace ZMS.Areas.Applicants.Pages
 {

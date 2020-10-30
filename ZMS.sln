@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZMS.Data", "ZMS.Data\ZMS.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZMS.Domain", "ZMS.Domain\ZMS.Domain.csproj", "{4929C0A6-7023-4328-9B94-FA38F7D9317C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZMS.Test", "ZMS.Test\ZMS.Test.csproj", "{D8B07A8A-A340-459B-B514-4788EF46BB24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZMS.Test", "ZMS.Test\ZMS.Test.csproj", "{D8B07A8A-A340-459B-B514-4788EF46BB24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
