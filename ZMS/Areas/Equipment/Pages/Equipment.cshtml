@@ -1,7 +1,47 @@
-﻿@page
+﻿@page "{title?}"
 @model ZMS.Areas.Equipment.Pages.EquipmentModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Equipment Management";
 }
 
-<h1>Welcome to the equipment page!</h1>
+<div>
+    <h1>
+        View And Manage Equipment<a style="float:right;" class="btn btn-outline-primary" asp-area="Equipment" asp-page="">Add new Gear</a>
+        <a style="float:right;" class="btn btn-outline-primary" asp-area="Equipment" asp-page="">Periodic Inspection</a>
+    </h1>
+</div>
+
+@if (Model.NeedsAttention > 0)
+{<div id="CenterIt" class="alert alert-danger">You have @Model.NeedsAttention pieces of equipment that need to be looked at <a asp-page="">Review Now</a></div>}
+ 
+<form method="get">
+    <div class="btn-group btn-block" role="group">
+
+        <button type="button" formmethod="get"class="btn btn-secondary" value="Harnesses">Harnesses</button>
+        <button type="button" class="btn btn-secondary">Helmets</button>
+        <button type="button" class="btn btn-secondary">Trolleys</button>
+        <button type="button" class="btn btn-secondary">Lanyards</button>
+        <button type="button" class="btn btn-secondary">Carabiners</button>
+        <button type="button" class="btn btn-secondary">Gloves</button>
+        <button type="button" class="btn btn-secondary">Radios</button>
+        <button type="button" class="btn btn-secondary">Radio Harnesses</button>
+        <button type="button" class="btn btn-secondary">Cameras</button>
+        <button type="button" class="btn btn-secondary">Ropes</button>
+        <button type="button" class="btn btn-secondary">Misc</button>
+    </div>
+<!--it would be nice to search by label number after having filtered by GearType from the buttons above-->
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search by label number" asp-for="Search" />
+            <div class="input-group-append">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<hr />
+<!--trying to find a way to display this when I click a button and have other viewcomponents display when I click other buttons...-->
+<vc:display-harnesses></vc:display-harnesses>
+

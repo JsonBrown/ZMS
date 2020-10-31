@@ -27,7 +27,17 @@ namespace ZMS.Data.Equipment
             throw new NotImplementedException();
         }
 
+        public Gear DeleteGear(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public GearInspection DeleteInspection()
+        {
+            throw new NotImplementedException();
+        }
+
+        public GearInspection DeleteInspection(int id)
         {
             throw new NotImplementedException();
         }
@@ -37,7 +47,17 @@ namespace ZMS.Data.Equipment
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Gear> GetAllEquipment()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Gear> GetByGearType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Gear> GetByGearType(GearType type)
         {
             throw new NotImplementedException();
         }

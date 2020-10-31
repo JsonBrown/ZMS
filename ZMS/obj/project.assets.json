@@ -8477,11 +8477,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\OneDrive\\Projects\\ZMS\\ZMS\\ZMS.csproj",
+      "projectUniqueName": "G:\\OneDrive\\Projects\\Git\\ZMS\\ZMS\\ZMS.csproj",
       "projectName": "ZMS",
-      "projectPath": "G:\\OneDrive\\Projects\\ZMS\\ZMS\\ZMS.csproj",
+      "projectPath": "G:\\OneDrive\\Projects\\Git\\ZMS\\ZMS\\ZMS.csproj",
       "packagesPath": "C:\\Users\\Mitch\\.nuget\\packages\\",
-      "outputPath": "G:\\OneDrive\\Projects\\ZMS\\ZMS\\obj\\",
+      "outputPath": "G:\\OneDrive\\Projects\\Git\\ZMS\\ZMS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mitch\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8497,8 +8497,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "G:\\OneDrive\\Projects\\ZMS\\ZMS.Data\\ZMS.Data.csproj": {
-              "projectPath": "G:\\OneDrive\\Projects\\ZMS\\ZMS.Data\\ZMS.Data.csproj"
+            "G:\\OneDrive\\Projects\\Git\\ZMS\\ZMS.Data\\ZMS.Data.csproj": {
+              "projectPath": "G:\\OneDrive\\Projects\\Git\\ZMS\\ZMS.Data\\ZMS.Data.csproj"
             }
           }
         }

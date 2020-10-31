@@ -9,7 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ZMS.Data;
+using ZMS.Data.Applicants;
+using ZMS.Data.Equipment;
 
 namespace ZMS
 {
@@ -28,10 +29,10 @@ namespace ZMS
             // enable below for in memory testing
 
             // Applicant
-            //services.AddSingleton<IApplicantData, InMemoryApplicantData>();
+            services.AddSingleton<IApplicantData, InMemoryApplicantData>();
 
             // Equipment
-            //services.AddSingleton<IGearData, InMemoryGearData>();
+            services.AddSingleton<IGearData, InMemoryGearData>();
 
 
             //enable below for sql server
