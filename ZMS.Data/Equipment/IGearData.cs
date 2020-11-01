@@ -8,7 +8,7 @@ namespace ZMS.Data.Equipment
     public interface IGearData
     {
         IEnumerable<Gear> GetAllEquipment();
-        IEnumerable<Gear> GetByGearType(GearType type);
+        // IEnumerable<Gear> GetByGearType(string type);
         Gear GetGearById(int id);
         Gear AddGear(Gear newGear);
         Gear UpdateGear(Gear updatedGear);

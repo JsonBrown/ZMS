@@ -62,6 +62,11 @@ namespace ZMS.Data.Equipment
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Gear> GetByGearType(string type)
+        {
+            throw new NotImplementedException();
+        }
+
         public Gear GetGearById(int Id)
         {
             throw new NotImplementedException();

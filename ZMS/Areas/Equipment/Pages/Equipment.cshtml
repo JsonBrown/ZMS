@@ -16,21 +16,20 @@
  
 <form method="get">
     <div class="btn-group btn-block" role="group">
-
-        <button type="button" formmethod="get"class="btn btn-secondary" value="Harnesses">Harnesses</button>
-        <button type="button" class="btn btn-secondary">Helmets</button>
-        <button type="button" class="btn btn-secondary">Trolleys</button>
-        <button type="button" class="btn btn-secondary">Lanyards</button>
-        <button type="button" class="btn btn-secondary">Carabiners</button>
-        <button type="button" class="btn btn-secondary">Gloves</button>
-        <button type="button" class="btn btn-secondary">Radios</button>
-        <button type="button" class="btn btn-secondary">Radio Harnesses</button>
-        <button type="button" class="btn btn-secondary">Cameras</button>
-        <button type="button" class="btn btn-secondary">Ropes</button>
-        <button type="button" class="btn btn-secondary">Misc</button>
+        <input asp-for="Search" class="btn btn-secondary" value="Harness" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Helmet" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Trolley" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Lanyard" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Carabiner" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Gloves" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Radio" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Radio_Harness" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Camera" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Rope" type="submit" />
+        <input asp-for="Search" class="btn btn-secondary" value="Misc" type="submit" />
     </div>
-<!--it would be nice to search by label number after having filtered by GearType from the buttons above-->
-    <div class="form-group">
+    
+    <!--<div class="form-group">
         <div class="input-group">
             <input type="search" class="form-control" placeholder="Search by label number" asp-for="Search" />
             <div class="input-group-append">
@@ -39,9 +38,43 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div>-->
 </form>
 <hr />
-<!--trying to find a way to display this when I click a button and have other viewcomponents display when I click other buttons...-->
-<vc:display-harnesses></vc:display-harnesses>
+<div class="table-responsive">
+    <table class="table table-sm table-hover table-striped table-bordered">
+        <caption>Here is your gear</caption>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Label Number</th>
+                <th scope="col">Location</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var g in Model.GearSearch)
+            {
+            <tr>
+                <td>@g.GearType</td>
+                <td>@g.LabelNumber</td>
+                <td>@g.Location</td>
+                <td>@g.Status</td>
+                <td>
+                    <a class="btn btn-sm" asp-area="Equipment" asp-page=""
+                       asp-route-applicantId="">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <a class="btn btn-sm" asp-area="Equipment" asp-page=""
+                       asp-route-applicantId="">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a class="btn btn-sm" asp-area="Equipment" asp-page="" asp-route-applicantId=""><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
 

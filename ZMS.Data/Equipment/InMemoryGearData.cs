@@ -57,13 +57,14 @@ namespace ZMS.Data.Equipment
                    select g;
         }
 
-        public IEnumerable<Gear> GetByGearType(GearType type)
+        /*public IEnumerable<Gear> GetByGearType(string type = null)
         {
+            Enum.TryParse(type, out GearType e);
             return from g in equipment
-                   where g.GearType == type && g.Status == GearStatus.Good
+                   where string.IsNullOrEmpty(type) || g.GearType == e && g.Status == GearStatus.Good
                    orderby g.Location
                    select g;
-        }
+        }*/
 
         public Gear GetGearById(int id)
         {

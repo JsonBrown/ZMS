@@ -332,4 +332,3 @@ G:\OneDrive\Projects\ZMS\ZMS\obj\Debug\netcoreapp3.1\Razor\Areas\Equipment\Pages
 G:\OneDrive\Projects\ZMS\ZMS\obj\Debug\netcoreapp3.1\Razor\Areas\Equipment\Pages\_ViewImports.cshtml.g.cs
 G:\OneDrive\Projects\Git\ZMS\ZMS\obj\Debug\netcoreapp3.1\Razor\Areas\Equipment\Pages\Equipment.cshtml.g.cs
 G:\OneDrive\Projects\Git\ZMS\ZMS\obj\Debug\netcoreapp3.1\Razor\Areas\Equipment\_ViewImports.cshtml.g.cs
-G:\OneDrive\Projects\Git\ZMS\ZMS\obj\Debug\netcoreapp3.1\Razor\Areas\Equipment\Pages\Components\DisplayHarnesses\Default.cshtml.g.cs
